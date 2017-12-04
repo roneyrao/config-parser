@@ -1,6 +1,6 @@
 {
   "name": "config-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "select configuration for specific build target",
   "main": "index.js",
   "scripts": {

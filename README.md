@@ -46,6 +46,6 @@ select configuration for specific build target; if `process.env.NODE_ENV == 'pro
  * @param cfg {json}
  * @param target {string} subkey of 'targets';
  * @returns {{cfg, stringifiedCfg, target}}
- 	* cfg: mixed output;
+	* cfg: mixed output;
 	* stringifiedCfg: with strings processed with JSON.stringify;
 	* target: selected target;
