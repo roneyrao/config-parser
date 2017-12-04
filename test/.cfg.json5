@@ -1,0 +1,33 @@
+{
+/*
+* default values;
+*/
+	src_dir:'app/',
+	entry:'index.js',
+	out_dir:'build_dev',
+	public_path:'/package/',
+	api_path:'/api/', 
+
+/*
+* values for different environments to override default values;
+*/
+	targets:{
+		mock:{
+			public_path:'/root/',
+			api_path:'/api/', 
+			mock_dir:'mock'
+			//proxy:'https://192.12.33.44', 
+			//proxy:{
+			//	'/api/': 'https://192.12.33.44'
+			//}
+		},
+		test:{
+			public_path:'/root/',
+			api_path:'https://192.12.33.44', 
+		},
+		production:{
+			public_path:'/root/',
+			api_path:'https://hna-app-test.hnair.com', 
+		}
+	}
+}
