@@ -2,13 +2,19 @@
   "name": "config-parser",
   "version": "1.0.0",
   "description": "select configuration for specific build target",
-  "main": "index.js",
+  "main": "parser.bundle.js",
   "scripts": {
-    "test": "nyc mocha"
+    "test": "cross-env BABEL_ENV=test nyc --require babel-register mocha ",
+    "build": "cross-env BABEL_ENV=node babel index.js --out-file parser.bundle.js",
+    "publishOnly": "npm test && npm run build"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-plugin-istanbul": "^4.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "mocha": "^4.0.1",
     "nyc": "^11.3.0",

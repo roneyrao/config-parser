@@ -12,15 +12,6 @@
 * values for different environments to override default values;
 */
 	targets:{
-		mock:{
-			public_path:'/root/',
-			api_path:'/api/', 
-			mock_dir:'mock'
-			//proxy:'https://192.12.33.44', 
-			//proxy:{
-			//	'/api/': 'https://192.12.33.44'
-			//}
-		},
 		test:{
 			public_path:'/root/',
 			api_path:'https://192.12.33.44', 
