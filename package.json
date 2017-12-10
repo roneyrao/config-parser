@@ -2,11 +2,12 @@
   "name": "config-parser",
   "version": "1.0.1",
   "description": "select configuration for specific build target",
-  "main": "parser.dist.js",
+  "main": "dist/parser",
+  "module": "lib/parser",
   "scripts": {
     "test": "cross-env BABEL_ENV=test nyc --reporter=lcov --reporter=text mocha",
     "lint": "eslint .",
-    "build": "babel index.js --out-file parser.dist.js",
+    "build": "babel lib -d dist",
     "prebuild": "npm run lint && npm test",
     "prepublishOnly": "npm run build"
   },
