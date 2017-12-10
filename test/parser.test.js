@@ -43,7 +43,7 @@ describe('selects non-exist target', () => {
   });
 });
 describe('force to production', () => {
-  it('throws error', () => {
+  it('returns target of "production"', () => {
     const env = process.env.NODE_ENV;
     process.env.NODE_ENV = 'production';
     expect(parser(cfg, 'test').target).to.equal('production');

@@ -1,4 +1,5 @@
 {
+  "report-dir":"__coverage__",
   "require": [
     "babel-register"
   ],
