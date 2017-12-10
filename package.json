@@ -24,10 +24,10 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "mocha": "^4.0.1",
     "nyc": "^11.3.0",
+    "eslint-plugin-import": "^2.8.0",
     "require-json5": "^1.0.2"
   },
   "dependencies": {
-    "debug": "^3.1.0",
-    "eslint-plugin-import": "^2.8.0"
+    "debug": "^3.1.0"
   }
 }
