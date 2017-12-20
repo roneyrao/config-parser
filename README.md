@@ -46,10 +46,18 @@ select configuration for specific build target; if `process.env.NODE_ENV == 'pro
 
 ### interface
 
-#### parseCfg
- * @param cfg {json}
- * @param target {string} subkey of 'targets';
- * @returns {{cfg, stringifiedCfg, target}}
-	* cfg: mixed output;
-	* stringifiedCfg: with strings processed with JSON.stringify;
-	* target: selected target;
+<a name="parseCfg"></a>
+
+#### parseCfg(cfgInput, targetSelected) ⇒ <code>Object</code>
+**Kind**: global function  
+**Returns**: <code>Object</code> - refer to @see  
+**See**: returned object
+ * cfg {Object} - merged config;
+ * stringifiedCfg {Object} - with strings processed with JSON.stringify;
+ * target {string} - calculated target;  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| cfgInput | <code>json</code> | content |
+| targetSelected | <code>string</code> | selected target, subkey of 'targets'; |
+
