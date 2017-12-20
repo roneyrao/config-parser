@@ -1,18 +1,27 @@
 {
   "name": "config-parser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "select configuration for specific build target",
   "main": "dist/parser",
   "module": "lib/parser",
   "scripts": {
     "test": "cross-env BABEL_ENV=test nyc --reporter=lcov --reporter=text mocha",
     "lint": "eslint .",
-    "build": "babel lib -d dist",
+    "build": "babel lib -d dist -s",
     "prebuild": "npm run lint && npm test",
     "prepublishOnly": "npm run build"
   },
   "author": "Roney",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roneyrao/config-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roneyrao/config-parser/issues"
+  },
+  "homepage": "https://github.com/roneyrao/config-parser#readme",
+  "keywords": ["config", "parser"],
   "devDependencies": {
     "babel-eslint": "^8.0.3",
     "babel-plugin-istanbul": "^4.1.5",
