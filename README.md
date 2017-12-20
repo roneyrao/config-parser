@@ -61,3 +61,8 @@ select configuration for specific build target; if `process.env.NODE_ENV == 'pro
 | cfgInput | <code>json</code> | content |
 | targetSelected | <code>string</code> | selected target, subkey of 'targets'; |
 
+
+## License
+
+[MIT](LICENSE).
+
