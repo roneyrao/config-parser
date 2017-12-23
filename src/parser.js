@@ -1,11 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
 /*
  * 1. select an environment, mix (may overwrite) its data with the subfields of root;
  * 2. convert key name to format of '__OUT_DIR__'
@@ -42,23 +34,17 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 require('babel-polyfill');
 
-var debug = require('debug')('config-parser');
+const debug = require('debug')('config-parser');
+
 
 function overwrite(cfg, targets, target) {
-  var selectedTargets = targets[target];
-
+  const { [target]: selectedTargets } = targets;
   if (selectedTargets) {
     // eslint-disable-next-line no-param-reassign
-    Object.entries(selectedTargets).forEach(function (_ref) {
-      var _ref2 = _slicedToArray(_ref, 2),
-          k = _ref2[0],
-          v = _ref2[1];
-
-      cfg[k] = v;
-    });
+    Object.entries(selectedTargets).forEach(([k, v]) => { cfg[k] = v; });
     debug('overriden cfg:', cfg);
   } else {
-    throw new Error('unfound config target: ' + target);
+    throw new Error(`unfound config target: ${target}`);
   }
 }
 
@@ -74,8 +60,8 @@ function overwrite(cfg, targets, target) {
 function parseCfg(cfgInput, targetSelected) {
   debug('input cfg:', cfgInput);
   // leave input untouched.
-  var cfg = Object.assign({}, cfgInput);
-  var target = void 0;
+  const cfg = Object.assign({}, cfgInput);
+  let target;
 
   if (targetSelected) {
     target = targetSelected.trim();
@@ -85,8 +71,7 @@ function parseCfg(cfgInput, targetSelected) {
   debug('target key:', target);
 
   // prune targets
-  var targets = cfg.targets;
-
+  const { targets } = cfg;
   delete cfg.targets;
 
   // copy selected properties to root;
@@ -95,27 +80,16 @@ function parseCfg(cfgInput, targetSelected) {
   }
 
   // convert key name to format of '__OUT_DIR__'
-  Object.entries(cfg).forEach(function (_ref3) {
-    var _ref4 = _slicedToArray(_ref3, 2),
-        k = _ref4[0],
-        v = _ref4[1];
-
+  Object.entries(cfg).forEach(([k, v]) => {
     cfg[['__', k.toUpperCase(), '__'].join('')] = v;
     delete cfg[k];
   });
   debug('renamed cfg:', cfg);
 
   // surround strings with quotes, for webpack 'define' plugin;
-  var stringifiedCfg = {};
-  Object.entries(cfg).forEach(function (_ref5) {
-    var _ref6 = _slicedToArray(_ref5, 2),
-        k = _ref6[0],
-        v = _ref6[1];
-
-    stringifiedCfg[k] = typeof v === 'string' ? JSON.stringify(v) : v;
-  });
-  return { cfg: cfg, stringifiedCfg: stringifiedCfg, target: target };
+  const stringifiedCfg = {};
+  Object.entries(cfg).forEach(([k, v]) => { stringifiedCfg[k] = typeof (v) === 'string' ? JSON.stringify(v) : v; });
+  return { cfg, stringifiedCfg, target };
 }
 
-exports.default = parseCfg;
-//# sourceMappingURL=parser.js.map
+export default parseCfg;

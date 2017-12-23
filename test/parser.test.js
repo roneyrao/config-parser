@@ -2,7 +2,7 @@ import {
   expect,
 } from 'chai';
 
-import parser from '../lib/parser';
+import parser from '../src/parser';
 
 const cfg = require('require-json5')(require('path').resolve(__dirname, '.cfg.json5'));
 
