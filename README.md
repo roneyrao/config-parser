@@ -18,18 +18,18 @@ select configuration for specific build target; if `process.env.NODE_ENV == 'pro
  **source**
  ```
 {
-	out_dir:'dev'
-	public_path:'/',
-	api_path:'/api/'
+	outDir:'dev'
+	publicPath:'/',
+	apiPath:'/api/'
 	targets:{
 		mock:{
-			public_path:'/root/',
-			api_path:'https://hna-app-test.hnair.com'
+			publicPath:'/root/',
+			apiPath:'https://hna-app-test.hnair.com'
 		},
 		production:{
-			out_dir:'dist',
-			public_path:'/appname/',
-			api_path:'https://hna-app-test.hnair.com',
+			outDir:'dist',
+			publicPath:'/appname/',
+			apiPath:'https://hna-app-test.hnair.com',
 		}
 	}
 }
@@ -49,7 +49,7 @@ select configuration for specific build target; if `process.env.NODE_ENV == 'pro
 
 <a name="parseCfg"></a>
 
-#### parseCfg(cfgInput, targetSelected) ⇒ <code>Object</code>
+#### parseCfg(cfgInput, targetSelected, postProcessor) ⇒ <code>Object</code>
 **Kind**: global function  
 **Returns**: <code>Object</code> - refer to @see  
 **See**: returned object
@@ -61,6 +61,7 @@ select configuration for specific build target; if `process.env.NODE_ENV == 'pro
 | --- | --- | --- |
 | cfgInput | <code>json</code> | content |
 | targetSelected | <code>string</code> | selected target, subkey of 'targets'; |
+| postProcessor | <code>Function</code> | process after selected config is merged before converting key character cases |
 
 
 ## License

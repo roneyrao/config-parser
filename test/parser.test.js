@@ -10,7 +10,8 @@ describe('returns default config', () => {
   const defs = Object.assign({}, cfg);
   delete defs.targets;
   Object.entries(defs).forEach(([k, v]) => {
-    defs[['__', k.toUpperCase(), '__'].join('')] = v;
+    const nk = k.replace(/([A-Z])/g, '_$1');
+    defs[['__', nk.toUpperCase(), '__'].join('')] = v;
     delete defs[k];
   });
   const parsed = parser(cfg);

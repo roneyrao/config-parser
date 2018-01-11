@@ -2,23 +2,23 @@
 /*
 * default values;
 */
-	src_dir:'app/',
+	srcDir:'app/',
 	entry:'index.js',
-	out_dir:'build_dev',
-	public_path:'/package/',
-	api_path:'/api/', 
+	outDir:'buildDev',
+	publicPath:'/package/',
+	apiPath:'/api/', 
 
 /*
 * values for different environments to override default values;
 */
 	targets:{
 		test:{
-			public_path:'/root/',
-			api_path:'https://192.12.33.44', 
+			publicPath:'/root/',
+			apiPath:'https://192.12.33.44', 
 		},
 		production:{
-			public_path:'/root/',
-			api_path:'https://hna-app-test.hnair.com', 
+			publicPath:'/root/',
+			apiPath:'https://hna-app-test.hnair.com', 
 		}
 	}
 }
