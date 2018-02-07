@@ -32,6 +32,7 @@
 
 */
 
+require('babel-polyfill');
 
 const debug = require('debug')('config-parser');
 
