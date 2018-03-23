@@ -32,7 +32,7 @@
 
 */
 
-require('babel-polyfill');
+require('core-js/fn/object/entries');
 
 const debug = require('debug')('config-parser');
 

@@ -5,8 +5,8 @@
   "main": "lib/parser",
   "scripts": {
     "test": "cross-env BABEL_ENV=test nyc --reporter=lcov --reporter=text mocha",
-    "lint": "eslint lib",
-    "build": "babel lib -d lib -s",
+    "lint": "eslint src",
+    "build": "babel src -d lib -s",
     "prebuild": "npm run lint && npm test",
     "prepublishOnly": "npm run build"
   },
@@ -44,7 +44,7 @@
     "require-json5": "^1.0.2"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
+    "core-js": "^2.5.0",
     "debug": "^3.1.0"
   }
 }
