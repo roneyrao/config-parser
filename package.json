@@ -1,12 +1,12 @@
 {
-  "name": "config-parser",
+  "name": "opinionated-config-parser",
   "version": "1.1.1",
   "description": "select configuration for specific build target",
   "main": "lib/parser",
   "scripts": {
-    "test": "cross-env BABEL_ENV=test nyc --reporter=lcov --reporter=text mocha && codecov",
+    "test": "cross-env BABEL_ENV=test nyc --reporter=lcov --reporter=text mocha",
     "lint": "eslint lib",
-    "build": "babel lib -d dist -s",
+    "build": "babel lib -d lib -s",
     "prebuild": "npm run lint && npm test",
     "prepublishOnly": "npm run build"
   },
@@ -17,12 +17,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/roneyrao/config-parser.git"
+    "url": "git+https://github.com/roneyrao/opinionated-config-parser.git"
   },
   "bugs": {
-    "url": "https://github.com/roneyrao/config-parser/issues"
+    "url": "https://github.com/roneyrao/opinionated-config-parser/issues"
   },
-  "homepage": "https://github.com/roneyrao/config-parser#readme",
+  "homepage": "https://github.com/roneyrao/opinionated-config-parser#readme",
   "keywords": [
     "config",
     "parser"
@@ -35,7 +35,6 @@
     "babel-preset-stage-1": "^6.24.1",
     "babel-register": "^6.24.1",
     "chai": "^4.1.2",
-    "codecov": "^3.0.0",
     "cross-env": "^5.1.1",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
