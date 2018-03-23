@@ -1,7 +1,6 @@
 ## opinionated-config-parser
 
 [![Build Status](https://travis-ci.org/roneyrao/opinionated-config-parser.svg?branch=master)](https://travis-ci.org/roneyrao/opinionated-config-parser)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/0d9047bd9fae6577010b/test_coverage)](https://codeclimate.com/github/roneyrao/opinionated-config-parser/test_coverage)
 [![codecov](https://codecov.io/gh/roneyrao/opinionated-config-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/roneyrao/opinionated-config-parser)
 [![Maintainability](https://api.codeclimate.com/v1/badges/0d9047bd9fae6577010b/maintainability)](https://codeclimate.com/github/roneyrao/opinionated-config-parser/maintainability)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/roneyrao/opinionated-config-parser/master/LICENSE)
