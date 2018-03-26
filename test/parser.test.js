@@ -43,11 +43,11 @@ describe('selects non-exist target', () => {
     expect(() => parser(cfg, 'abcd')).to.throw('unfound');
   });
 });
-describe('force to production', () => {
+describe('default', () => {
   it('returns target of "production"', () => {
     const env = process.env.NODE_ENV;
     process.env.NODE_ENV = 'production';
-    expect(parser(cfg, 'test').target).to.equal('production');
+    expect(parser(cfg).target).to.equal('production');
     process.env.NODE_ENV = env;
   });
 });

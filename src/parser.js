@@ -82,7 +82,10 @@ function parseCfg(cfgInput, targetSelected, postProcessor) {
     target = targetSelected.trim();
   }
   // if 'NODE_ENV' is 'production', set to 'production';
-  target = process.env.NODE_ENV === 'production' ? 'production' : target;
+  // target = process.env.NODE_ENV === 'production' ? 'production' : target;
+  if (!target) {
+    target = process.env.NODE_ENV;
+  }
   debug('target key:', target);
 
   // prune targets

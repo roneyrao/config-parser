@@ -5,7 +5,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/0d9047bd9fae6577010b/maintainability)](https://codeclimate.com/github/roneyrao/opinionated-config-parser/maintainability)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/roneyrao/opinionated-config-parser/master/LICENSE)
 
-Select configuration for specific build target; if `process.env.NODE_ENV == 'production'`, target is set to 'production' no matter what is passed in.
+Select configuration for specific build target. If no target, defaults to `process.env.NODE_ENV`.
 
  1. select an environment, mix (may overwrite) its data with the subfields of root;
  2. convert key name to format of `__OUT_DIR__`
