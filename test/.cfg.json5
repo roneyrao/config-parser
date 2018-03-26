@@ -6,7 +6,8 @@
 	entry:'index.js',
 	outDir:'buildDev',
 	publicPath:'/package/',
-	apiPath:'/api/', 
+	apiPath:'/api/',
+  alias: {},
 
 /*
 * values for different environments to override default values;
@@ -14,11 +15,11 @@
 	targets:{
 		test:{
 			publicPath:'/root/',
-			apiPath:'https://192.12.33.44', 
+			apiPath:'https://192.12.33.44',
 		},
 		production:{
 			publicPath:'/root/',
-			apiPath:'https://hna-app-test.hnair.com', 
+			apiPath:'https://hna-app-test.hnair.com',
 		}
 	}
 }

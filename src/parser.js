@@ -105,7 +105,13 @@ function parseCfg(cfgInput, targetSelected, postProcessor) {
 
   // surround strings with quotes, for webpack 'define' plugin;
   const stringifiedCfg = {};
-  Object.entries(cfg).forEach(([k, v]) => { stringifiedCfg[k] = typeof (v) === 'string' ? JSON.stringify(v) : v; });
+  Object.entries(cfg).forEach(([k, v]) => {
+    if (typeof v === 'object') {
+      v = v.toString();
+    }
+
+    stringifiedCfg[k] = typeof (v) === 'string' ? JSON.stringify(v) : v;
+  });
   return { cfg, stringifiedCfg, target };
 }
 

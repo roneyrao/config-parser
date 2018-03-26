@@ -21,6 +21,7 @@ describe('returns default config', () => {
   });
   it('returns correct stringified strings', () => {
     expect(parsed.stringifiedCfg.__PUBLIC_PATH__).to.equal('"/package/"');
+    expect(parsed.stringifiedCfg.__ALIAS__).to.equal('"[object Object]"');
   });
   it('returns correct target', () => {
     expect(parsed.target).to.be.undefined;
