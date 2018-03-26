@@ -1,6 +1,6 @@
 {
   "name": "opinionated-config-parser",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "select configuration for specific build target",
   "main": "lib/parser",
   "scripts": {
